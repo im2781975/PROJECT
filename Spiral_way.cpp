@@ -40,12 +40,9 @@ void print(int r, int c) {
         o++;
     }
 }
-
 int main() {
     int r, c;
     cin >> r >> c;
     print(r, c);
     return 0;
 }
-
-
