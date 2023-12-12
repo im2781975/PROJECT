@@ -57,9 +57,10 @@ int main() {
                 for (int i = 0; i < n; i++) {
                     if (id == s[i].id) {
                         display(s[i]);
-                        break;
+                        return 0;
                     }
                 }
+                printf("\nSortage of information.");
             } else {
                 printf("\nPlease enter valid username & password");
             }
@@ -72,17 +73,18 @@ int main() {
                 struct student s; // Declare a single student outside the loop
 
                 for (int i = 0; i < n; i++) {
-                    if (id == s.id) {
+                    if (id == s.id)    {
                         display(s);
                         break;
                     }
+                    
                 }
+                printf("\nSortage of information.");
             } else {
                 printf("\nPlease enter valid username & password");
             }
             break;
         }
     }
-
     return 0;
 }
