@@ -64,9 +64,14 @@ int main() {
                             break;
                             
                         }
+                        else
+                        {
+                            flag=0;
+                        }
                     }
                 } else {
-                    printf("\nPlease enter valid username & password");
+                   // printf("\nPlease enter valid username & password");
+                    flag=2;
                 }
                 break;
             }
@@ -82,10 +87,14 @@ int main() {
                             flag=1;
                             break;
                         }
+                        else
+                        {
+                            flag=0;
+                        }
                     }
                 } else {
-                    printf("\nPlease enter valid username & password");
-                    flag==2;
+                    //printf("\nPlease enter valid username & password");
+                    flag=2;
                 }
                 break;
             }
@@ -93,6 +102,10 @@ int main() {
         if(flag==0)
         {
             printf("Sortage of information");
+        }
+        if(flag==2)
+        {
+            printf("\nplease enter valid username & password");
         }
         printf("\nEnter('1' for continue) : ");
         scanf(" %c", &ch); // Corrected format specifier for char input
