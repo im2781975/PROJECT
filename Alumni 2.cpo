@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 100
+
+struct Student {
+    int id;
+    char name[50];
+    char dept[50];
+    int trim;
+    float marks;
+};
+
+int main() {
+    struct Student students[MAX_STUDENTS];
+    int numStudents = 0;
+
+    while (1) {
+        printf("\nStudents Exam Result Tracker\n");
+        printf("1. Add Student\n");
+        printf("2. Display Students\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+
+        int choice;
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                if (numStudents < MAX_STUDENTS) {
+                    struct Student newStudent;
+                    printf("Enter Student ID: ");
+                    scanf("%d", &newStudent.id);
+
+                    printf("Enter Student Name: ");
+                    scanf("%s", newStudent.name);
+
+                    printf("Enter Student Department: ");
+                    scanf("%s", newStudent.dept);
+
+                    printf("Enter Student Trimester: ");
+                    scanf("%d", &newStudent.trim);
+
+                    printf("Enter Obtained Marks: ");
+                    scanf("%f", &newStudent.marks);
+
+                    students[numStudents] = newStudent;
+                    numStudents++;
+
+                    printf("Student added successfully.\n");
+                } else {
+                    printf("Maximum number of students reached.\n");
+                }
+                break;
+
+            case 2:
+                if (numStudents > 0) {
+                    printf("\nStudent List:\n");
+                    printf("ID\t           Name\t       Depertment\t      Trimester\t        \tMarks\n");
+                    for (int i = 0; i < numStudents; i++) {
+                        printf("%d\t  %s\t       %s\t                %d\t                %.2f\n", students[i].id, students[i].name, students[i].dept, students[i].trim, students[i].marks);
+                    }
+                } else {
+                    printf("No students to display.\n");
+                }
+                break;
+
+            case 3:
+                printf("Exiting the program. Goodbye!\n");
+                return 0;
+
+            default:
+                printf("Invalid choice. Please select a valid option.\n");
+        }
+    }
+
+    return 0;
+}
